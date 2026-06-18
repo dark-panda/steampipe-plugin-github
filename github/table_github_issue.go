@@ -64,6 +64,9 @@ func sharedIssueColumns() []*plugin.Column {
 		{Name: "user_did_author", Type: proto.ColumnType_BOOL, Hydrate: issueHydrateUserDidAuthor, Transform: transform.FromValue(), Description: "If true, user authored the issue."},
 		{Name: "user_subscription", Type: proto.ColumnType_STRING, Hydrate: issueHydrateUserSubscription, Transform: transform.FromValue(), Description: "Subscription state of the user to the issue."},
 		{Name: "assignees", Type: proto.ColumnType_JSON, Hydrate: issueHydrateAssignees, Transform: transform.FromValue().NullIfZero(), Description: "A list of Users assigned to the issue."},
+		{Name: "project_items", Type: proto.ColumnType_JSON, Hydrate: issueHydrateProjectItems, Transform: transform.FromValue(), Description: "A list of project node IDs (PVT_...) for ProjectV2 projects the issue belongs to."},
+		{Name: "project_items_total_count", Type: proto.ColumnType_INT, Hydrate: issueHydrateProjectItemsTotalCount, Transform: transform.FromValue(), Description: "Count of ProjectV2 projects the issue belongs to."},
+		{Name: "projects_v2_total_count", Type: proto.ColumnType_INT, Hydrate: issueHydrateProjectsV2TotalCount, Transform: transform.FromValue(), Description: "Count of ProjectsV2 the issue is linked to."},
 	}
 }
 
