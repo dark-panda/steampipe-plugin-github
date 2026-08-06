@@ -1,3 +1,19 @@
+## v1.10.0 [2026-08-06]
+
+_What's new?_
+
+- New tables added
+  - [github_actions_cache](https://hub.steampipe.io/plugins/turbot/github/tables/github_actions_cache) ([#557](https://github.com/turbot/steampipe-plugin-github/pull/557)) (Thanks [@WallyGuzman](https://github.com/WallyGuzman) for the contribution!)
+
+_Enhancements_
+
+- Added optional quals for `head_sha`, `actor_login`, and `created_at` (with range support) to `github_actions_repository_workflow_run` table. ([#558](https://github.com/turbot/steampipe-plugin-github/pull/558)) (Thanks [@WallyGuzman](https://github.com/WallyGuzman) for the contribution!)
+
+_Bug fixes_
+
+- Fixed the `workflow_id` column type of `github_actions_repository_workflow_run` table to be `INT` instead of `STRING`. ([#558](https://github.com/turbot/steampipe-plugin-github/pull/558))
+- Fixed nil pointer panics on nullable timestamp columns in `github_actions_cache`, `github_actions_repository_workflow_job`, and `github_actions_repository_workflow_run` tables. ([#558](https://github.com/turbot/steampipe-plugin-github/pull/558))
+
 ## v1.9.1 [2026-07-16]
 
 _Dependencies_
